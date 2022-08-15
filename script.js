@@ -30,7 +30,12 @@ function addBookToLibrary() {
     count++;
     
     myLibrary.push(newBook);
+    console.table(myLibrary);
     return console.log(myLibrary[count].info());
 }
 
-// addBookToLibrary();
+let book1 = new Book(1, 2, 3, 4);
+let book2 = new Book('a', 's', 'd', 'f');
+let book3 = new Book('z', 'x', 'c', 'v');
+
+myLibrary.push(book1, book2, book3);
