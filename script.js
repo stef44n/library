@@ -18,7 +18,7 @@ Book.prototype.info = function() {
 };
 
 let newBook = undefined;
-let count = -1;
+// let count = -1;
 
 function addBookToLibrary() {
     newBook = new Book(
@@ -27,11 +27,12 @@ function addBookToLibrary() {
         prompt('Pages'),
         prompt('Read'));
 
-    count++;
+    // count++;
     
     myLibrary.push(newBook);
     console.table(myLibrary);
-    return console.log(myLibrary[count].info());
+    getTable();
+    // return console.log(myLibrary[count].info());
 };
 
 let book1 = new Book(1, 2, 3, 4);
@@ -40,7 +41,8 @@ let book3 = new Book('z', 'x', 'c', 'v');
 
 myLibrary.push(book1, book2, book3);
 
-let btnGet = document.querySelector('button');
+
+let btnGet = document.querySelector('button.displayBtn');
 let myTable = document.querySelector('#table');
 
 let headers = ['Title', 'Author', 'Pages', 'Read'];
@@ -58,7 +60,7 @@ function getTableHeaders() {
         header.appendChild(textNode); // add text into header elements
         headerRow.appendChild(header); // add table headers into header row
     });
-
+    
     table.appendChild(headerRow); // add headers to the table
 };
 
@@ -91,3 +93,6 @@ function getTable() {
     deleteTable();
     getTableRows();
 };
+
+let btnNewBook = document.querySelector('button.newBook');
+btnNewBook.addEventListener('click', addBookToLibrary);
