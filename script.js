@@ -45,7 +45,7 @@ myLibrary.push(book1, book2, book3);
 let btnGet = document.querySelector('button.displayBtn');
 let myTable = document.querySelector('#table');
 
-let headers = ['Title', 'Author', 'Pages', 'Read'];
+let headers = ['Title', 'Author', 'Pages', 'Read', 'DELETE'];
 
 btnGet.addEventListener('click', getTable);
 
@@ -67,17 +67,42 @@ function getTableHeaders() {
 getTableHeaders();
 
 function getTableRows() {
+    let num = 0; // set initial index value at zero
     myLibrary.forEach(book => { // add cell values
         let row = document.createElement('tr'); // create a table row node
-        
+
+        let deleteBtn = document.createElement('button'); // create a delete button
+        deleteBtn.innerHTML = 'Delete &#10060;'; // add a label to the button
+
         Object.values(book).forEach(text => { // add values to each cell
             let cell = document.createElement('td'); // create table data elements
             let textNode = document.createTextNode(text); // create text nodes
+            
             cell.appendChild(textNode); // add text into table data elements
             row.appendChild(cell); // add cells into the row
+            row.append(deleteBtn); // add the button to the table behind other values
+            deleteBtn.setAttribute('value', num); // set a numeric attribute to match with myLibrary array
+            // deleteBtn.setAttribute('class', 'del-btn'); // set a class name
+            row.setAttribute('value', num); // set a numeric attribute to match with myLibrary array
         });
-        
+
+        num++; // increment the value by one with each loop
         table.appendChild(row); // add the new rows to the table
+
+        function deleteTableRow() { // delete single row (from array index = deleteBtn.value)
+            for (let i = 0; i < myLibrary.length; i++){
+                if (deleteBtn.value == i){
+                    // console.log(myLibrary[i]);
+                    // console.log(deleteBtn.value);
+                    myLibrary.splice(i, 1); // deletes single array object based on position
+                    getTable(); // resets entire table with updated array data (including attributes)
+                };
+            };
+            //delete row (array object) splice(x,1)
+            //getTable()
+        };
+        
+        deleteBtn.addEventListener('click', deleteTableRow);
     });
     
     myTable.appendChild(table); // add this new table to the html
