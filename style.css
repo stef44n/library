@@ -1,3 +1,90 @@
-table, tr, td {
-    border: 1px solid gray;
+* {
+    margin: 0;
+    /* padding: 0; */
+    font-size: 20px;
+}
+
+table, tr, th, td {
+    /* border: 1px solid gray; */
+    font-size: 0.8rem;
+}
+
+th {
+    padding: 5px  20px;
+    background-color: #128a7d;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.2rem;
+}
+
+td {
+    padding: 5px 20px;
+    text-align: center;
+    background-color: #ceffa160;
+    border-radius: 5px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    /* border: solid red 1px; */
+    height: 100%;
+    align-items: center;
+    padding: 40px 40px 80px;
+    margin: 40px;
+    background-color: rgba(128, 128, 128, 0.089);
+    border-radius: 40px;
+}
+
+table {
+    background-color: black;
+    border: black solid 5px;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+tr {
+    padding: 5px 0;
+    margin: 7px 0;
+}
+
+tr:nth-child(2n) {
+    background-color: #cfffa1;
+}
+
+tr:nth-child(2n - 1) {
+    background-color: #ceffa1b4;
+}
+
+tr :nth-child(2n){
+    font-weight: bold;
+}
+
+.displayBtn,
+.newBook {
+    height: 2rem;
+    /* width: 6rem; */
+    margin: 40px 20px 0;
+    padding: 5px 25px;
+    border-radius: 10px;
+    background-image: linear-gradient(45deg, rgba(2, 85, 163, 0.678), rgb(0, 217, 255));
+    font-weight: bold;
+    color: black;
+}
+
+.del-btn,
+.read-btn {
+    display: inline-block;
+    margin: 8px 15px;
+    font-size: 0.8rem;
+    padding: 5px 20px;
+    border-radius: 7px;
+    border: black solid 2px;
+    height: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.del-btn {
+    background-color: rgba(255, 0, 0, 0.603);
 }

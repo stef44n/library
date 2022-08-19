@@ -35,9 +35,9 @@ function addBookToLibrary() {
     // return console.log(myLibrary[count].info());
 };
 
-let book1 = new Book(1, 2, 3, 'yes');
-let book2 = new Book('a', 's', 'd', 'no');
-let book3 = new Book('z', 'x', 'c', 'no');
+let book1 = new Book('Rich Dad Poor Dad', 'R.T. Kiyosaki', '352', 'YES');
+let book2 = new Book('The 7 Habits of Highly Effective People', 'S.R. Covey', '440', 'NO');
+let book3 = new Book('Bob Mortimer and away', 'B. Mortimer', '323', 'NO');
 
 myLibrary.push(book1, book2, book3);
 
@@ -75,7 +75,7 @@ function getTableRows() {
         deleteBtn.innerHTML = '&#10060;'; // add a label to the button
 
         let readBtn = document.createElement('button');
-        readBtn.innerText = 'READ';
+        readBtn.innerHTML = '&#128366;';
 
         Object.values(book).forEach(text => { // add values to each cell
             let cell = document.createElement('td'); // create table data elements
@@ -87,7 +87,8 @@ function getTableRows() {
             row.append(deleteBtn); // add the button to the table behind other values
             deleteBtn.setAttribute('value', num); // set a numeric attribute to match with myLibrary array
             readBtn.setAttribute('value', num); // set a numeric attribute to match with myLibrary array
-            // deleteBtn.setAttribute('class', 'del-btn'); // set a class name
+            readBtn.setAttribute('class', 'read-btn'); // set a class name
+            deleteBtn.setAttribute('class', 'del-btn'); // set a class name
             row.setAttribute('value', num); // set a numeric attribute to match with myLibrary array
         });
 
@@ -97,14 +98,14 @@ function getTableRows() {
         function changeReadStatus() { // toggle read status (from array index = readBtn.value)
             for (let i = 0; i < myLibrary.length; i++){
                 if (readBtn.value == i) {
-                    if (myLibrary[i]['read'] != 'yes'){
+                    if (myLibrary[i]['read'] != 'YES'){
                         // console.log(myLibrary[i]['read']);
                         // console.log(readBtn.value);
-                        myLibrary[i]['read'] = 'yes';
+                        myLibrary[i]['read'] = 'YES';
                         // console.log(myLibrary[i]['read']);
                         getTable();
                     } else {
-                        myLibrary[i]['read'] = 'no';
+                        myLibrary[i]['read'] = 'NO';
                         getTable();
                     };
                 };
