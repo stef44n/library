@@ -35,9 +35,9 @@ function addBookToLibrary() {
     // return console.log(myLibrary[count].info());
 };
 
-let book1 = new Book(1, 2, 3, 4);
-let book2 = new Book('a', 's', 'd', 'f');
-let book3 = new Book('z', 'x', 'c', 'v');
+let book1 = new Book(1, 2, 3, 'yes');
+let book2 = new Book('a', 's', 'd', 'no');
+let book3 = new Book('z', 'x', 'c', 'no');
 
 myLibrary.push(book1, book2, book3);
 
@@ -45,7 +45,7 @@ myLibrary.push(book1, book2, book3);
 let btnGet = document.querySelector('button.displayBtn');
 let myTable = document.querySelector('#table');
 
-let headers = ['Title', 'Author', 'Pages', 'Read', 'DELETE'];
+let headers = ['Title', 'Author', 'Pages', 'Read', 'MODIFY'];
 
 btnGet.addEventListener('click', getTable);
 
@@ -72,7 +72,10 @@ function getTableRows() {
         let row = document.createElement('tr'); // create a table row node
 
         let deleteBtn = document.createElement('button'); // create a delete button
-        deleteBtn.innerHTML = 'Delete &#10060;'; // add a label to the button
+        deleteBtn.innerHTML = '&#10060;'; // add a label to the button
+
+        let readBtn = document.createElement('button');
+        readBtn.innerText = 'READ';
 
         Object.values(book).forEach(text => { // add values to each cell
             let cell = document.createElement('td'); // create table data elements
@@ -80,8 +83,10 @@ function getTableRows() {
             
             cell.appendChild(textNode); // add text into table data elements
             row.appendChild(cell); // add cells into the row
+            row.appendChild(readBtn);
             row.append(deleteBtn); // add the button to the table behind other values
             deleteBtn.setAttribute('value', num); // set a numeric attribute to match with myLibrary array
+            readBtn.setAttribute('value', num); // set a numeric attribute to match with myLibrary array
             // deleteBtn.setAttribute('class', 'del-btn'); // set a class name
             row.setAttribute('value', num); // set a numeric attribute to match with myLibrary array
         });
@@ -89,9 +94,28 @@ function getTableRows() {
         num++; // increment the value by one with each loop
         table.appendChild(row); // add the new rows to the table
 
+        function changeReadStatus() { // toggle read status (from array index = readBtn.value)
+            for (let i = 0; i < myLibrary.length; i++){
+                if (readBtn.value == i) {
+                    if (myLibrary[i]['read'] != 'yes'){
+                        // console.log(myLibrary[i]['read']);
+                        // console.log(readBtn.value);
+                        myLibrary[i]['read'] = 'yes';
+                        // console.log(myLibrary[i]['read']);
+                        getTable();
+                    } else {
+                        myLibrary[i]['read'] = 'no';
+                        getTable();
+                    };
+                };
+            };
+        };
+        
+        readBtn.addEventListener('click', changeReadStatus);
+
         function deleteTableRow() { // delete single row (from array index = deleteBtn.value)
             for (let i = 0; i < myLibrary.length; i++){
-                if (deleteBtn.value == i){
+                if (deleteBtn.value == i) {
                     // console.log(myLibrary[i]);
                     // console.log(deleteBtn.value);
                     myLibrary.splice(i, 1); // deletes single array object based on position
