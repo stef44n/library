@@ -20,8 +20,13 @@ th {
 td {
     padding: 5px 20px;
     text-align: center;
-    background-color: #ceffa160;
+    background-color: #ceffa1;
     border-radius: 5px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
 }
 
 #container {
@@ -34,6 +39,7 @@ td {
     margin: 40px;
     background-color: rgba(128, 128, 128, 0.089);
     border-radius: 40px;
+    box-shadow: 0px 5px 5px 0px grey;
 }
 
 table {
@@ -41,6 +47,7 @@ table {
     border: black solid 5px;
     border-radius: 10px;
     margin-top: 40px;
+    box-shadow: 0px 0px 6px 3px grey;
 }
 
 tr {
@@ -48,13 +55,13 @@ tr {
     margin: 7px 0;
 }
 
-tr:nth-child(2n) {
+/* tr:nth-child(2n) {
     background-color: #cfffa1;
 }
 
 tr:nth-child(2n - 1) {
     background-color: #ceffa1b4;
-}
+} */
 
 tr :nth-child(2n){
     font-weight: bold;
@@ -70,12 +77,13 @@ tr :nth-child(2n){
     background-image: linear-gradient(45deg, rgba(2, 85, 163, 0.678), rgb(0, 217, 255));
     font-weight: bold;
     color: black;
+    box-shadow: 4px 4px 5px 0px grey;
 }
 
 .del-btn,
 .read-btn {
     display: inline-block;
-    margin: 8px 15px;
+    margin: 8px 0;
     font-size: 0.8rem;
     padding: 5px 20px;
     border-radius: 7px;
@@ -85,6 +93,15 @@ tr :nth-child(2n){
     align-items: center;
 }
 
+.read-btn {
+    margin-left: 14px;
+    margin-right: 7px;
+}
+
 .del-btn {
     background-color: rgba(255, 0, 0, 0.603);
+    margin-left: 7px;
+    margin-right: 14px;
+    position: relative;
+    top: 1px;
 }
