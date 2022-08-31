@@ -1,21 +1,23 @@
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    // this.info = function() {
-    //     // return console.log(`${title} by ${author}, ${pages} pages, ${read}`);
-    //     let sentence = `${title} by ${author}, ${pages} pages, ${read}`;
-    //     return sentence;
-    // }
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+        // this.info = function() {
+        //     // return console.log(`${title} by ${author}, ${pages} pages, ${read}`);
+        //     let sentence = `${title} by ${author}, ${pages} pages, ${read}`;
+        //     return sentence;
+        // }
+    }
+    info() {
+        let sentence = `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
+        return sentence;
+    }
 };
 
-Book.prototype.info = function() {
-    let sentence = `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
-    return sentence;
-};
 
 let newBook = undefined;
 // let count = -1;
