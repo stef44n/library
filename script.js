@@ -65,8 +65,10 @@ function addBookToLibrary() {
     formContainer.append(pagesLabel);
 
     const pagesInput = document.createElement("input");
-    pagesInput.setAttribute("type", "text");
+    pagesInput.setAttribute("type", "number");
     pagesInput.setAttribute("name", "pages");
+    pagesInput.setAttribute("pattern", "^[0-9]+$");
+    pagesInput.setAttribute("min", "0");
     pagesInput.setAttribute("required", "");
     formContainer.append(pagesInput);
 
@@ -78,12 +80,14 @@ function addBookToLibrary() {
     const readInput = document.createElement("input");
     readInput.setAttribute("type", "text");
     readInput.setAttribute("name", "read");
-    readInput.setAttribute("placeholder", "yes/no");
+    readInput.setAttribute("pattern", "[YyNn]");
+    readInput.setAttribute("placeholder", "y/n");
     readInput.setAttribute("required", "");
     formContainer.append(readInput);
 
     const submitButton = document.createElement("input");
     submitButton.setAttribute("type", "submit");
+    submitButton.setAttribute("class", "submitBtn");
     formContainer.append(submitButton);
 
     const onSubmit = (el) => {
@@ -124,7 +128,7 @@ let book2 = new Book(
     "440",
     "NO"
 );
-let book3 = new Book("Bob Mortimer and away", "B. Mortimer", "323", "NO");
+let book3 = new Book("Bob Mortimer and Away", "B. Mortimer", "323", "NO");
 
 myLibrary.push(book1, book2, book3);
 

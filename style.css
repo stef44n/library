@@ -124,7 +124,7 @@ tr :nth-child(2n) {
     z-index: 9;
     margin-top: 10px;
     border-radius: 10px;
-    background-color: #ceffa1;
+    background-color: white;
     box-shadow: rgb(75, 198, 202) 0px 11px 19px 15px;
 }
 
@@ -138,4 +138,16 @@ tr :nth-child(2n) {
 #formHeading,
 input[type="submit"] {
     grid-column: span 2;
+}
+
+input:invalid {
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid red;
+    border-radius: 3px;
+}
+
+input:valid:not(.submitBtn) {
+    background-color: rgba(21, 255, 0, 0.1);
+    border: 1px solid green;
+    border-radius: 3px;
 }
