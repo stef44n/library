@@ -4,13 +4,16 @@
     font-size: 20px;
 }
 
-table, tr, th, td {
+table,
+tr,
+th,
+td {
     /* border: 1px solid gray; */
     font-size: 0.8rem;
 }
 
 th {
-    padding: 5px  20px;
+    padding: 5px 20px;
     background-color: #128a7d;
     border-radius: 5px;
     color: white;
@@ -40,6 +43,7 @@ body {
     background-color: rgba(128, 128, 128, 0.089);
     border-radius: 40px;
     box-shadow: 0px 5px 5px 0px grey;
+    position: relative;
 }
 
 table {
@@ -63,7 +67,7 @@ tr:nth-child(2n - 1) {
     background-color: #ceffa1b4;
 } */
 
-tr :nth-child(2n){
+tr :nth-child(2n) {
     font-weight: bold;
 }
 
@@ -74,7 +78,11 @@ tr :nth-child(2n){
     margin: 40px 20px 0;
     padding: 5px 25px;
     border-radius: 10px;
-    background-image: linear-gradient(45deg, rgba(2, 85, 163, 0.678), rgb(0, 217, 255));
+    background-image: linear-gradient(
+        45deg,
+        rgba(2, 85, 163, 0.678),
+        rgb(0, 217, 255)
+    );
     font-weight: bold;
     color: black;
     box-shadow: 4px 4px 5px 0px grey;
@@ -104,4 +112,30 @@ tr :nth-child(2n){
     margin-right: 14px;
     position: relative;
     top: 1px;
+}
+
+.form-popup {
+    /* display: none; */
+    position: absolute;
+    top: 20px;
+    /* right: 15px; */
+    /* border: 3px solid #f1f1f1; */
+    border: 3px solid black;
+    z-index: 9;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: #ceffa1;
+    box-shadow: rgb(75, 198, 202) 0px 11px 19px 15px;
+}
+
+.form-container {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    padding: 15px;
+}
+
+#formHeading,
+input[type="submit"] {
+    grid-column: span 2;
 }
