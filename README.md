@@ -8,10 +8,11 @@ The aim of the assignment was to create a library app in which you could record 
 
 <h3 align="left">Key objectives:</h3>
 
-* Introduction to object constructors and prototypes
-* More in depth practice of DOM operations
-* Use HTML table to display information
-* Dynamically add/remove table rows (based on array index value) using buttons
+-   Introduction to object constructors and prototypes
+-   More in depth practice of DOM operations
+-   Use HTML table to display information
+-   Dynamically add/remove table rows (based on array index value) using buttons
+-   Add a simple form with validation to add `new Book` class objects in correct format
 
 <!-- <h3 align="left">Biggest challenges</h3>
 <ul>
@@ -28,8 +29,7 @@ The aim of the assignment was to create a library app in which you could record 
 
 <h3 align="left">Credits:</h3>
 
-* <a href="https://www.theodinproject.com/about">TOP</a>
-* <a href="https://rahuldkjain.github.io/gh-profile-readme-generator/">Rahuldkjain - ReadMe generator</a>
-
+-   <a href="https://www.theodinproject.com/about">TOP</a>
+-   <a href="https://rahuldkjain.github.io/gh-profile-readme-generator/">Rahuldkjain - ReadMe generator</a>
 
 <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/stef44n/library?label=latest%20update&logo=github&style=for-the-badge">
